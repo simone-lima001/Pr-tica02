@@ -1,0 +1,43 @@
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return '''
+    <a href="/sobre">Sobre</a>
+    <a href="/experiencia">experiência profissional</a>
+    <a href="/formacao">formação acadêmica</a>
+    <a href="/contatos">contatos</a>
+    
+    '''
+
+#- página sobre mim
+@app.route('/sobre')
+def sobre():
+    return "<h1>Sobre Mim</h1><p>Nascida em Cedro - Ceará, 32 anos, estudante de Sistemas de informação.</p>"
+
+
+
+#página  experiência profissional
+@app.route('/experiencia')
+def experiencia():
+    return "<h1>Experiência Profissional</h1><ul><li><h4>Não possuo nenhuma experiencia profissional</h4></li></ul>"
+
+
+#página formação acadêmica
+@app.route('/formacao')
+def formacao():
+    return "<li><h4>Ensino Médio Completo</h4></li><li><h4>Técnico em Eletrotécnica</h4></li><li><h4>Bacharelado em Sistemas de Informação. c-ursando</h4></li>.</ul><h2>Qualificações </h2><ul><li><h5>Curso de Espanhol</h5></li><li><h5>Curso tecnico em informática</h5></li></ul>"
+
+
+#página contatos
+@app.route('/contatos')
+def contato():
+
+    return "<p><h1>Meus contatos são:</h1></p><p>Email: simone.lima.souza04@aluno.ifce.edu.br</p><p>Telefone: (88)99426-9724</p>"
+
+
+
+if __name__ =="__main__":
+    app.run(debug=True)
